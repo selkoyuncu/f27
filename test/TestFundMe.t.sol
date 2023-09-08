@@ -5,5 +5,15 @@ import {Test} from "../lib/forge-std/src/Test.sol";
 
 
 contract TestFundMe is Test {
+    
+
+
+    function setUp() external {
+
+    }
+
+    function test_fund() external {
+        
+    }
 
 }
