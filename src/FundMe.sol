@@ -8,17 +8,23 @@ error NotOwner();
 
 contract FundMe {
 
+    mapping(address=>uint256) private s_AddressToFund;
+    address[] private s_FunderList;
+    address private i_owner;
 
-/////////////////////////////////////////////
- function fundMe() public payable {
+    constructor(){
+        i_owner = msg.sender;
+    }
 
- }
+    /////////////////////////////////////////////
+    function fundMe() public payable {
 
+        s_FunderList.push(msg.sender);
+        s_AddressToFund[msg.sender]+= msg.value; 
+    }
 
-/////////////////////////////////////////////
-function withdraw() public {
-
-
-}
-
+    /////////////////////////////////////////////
+    function withdraw() public {
+        
+    }
 }
